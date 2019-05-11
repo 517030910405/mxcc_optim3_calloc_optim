@@ -33,16 +33,25 @@ public class IR_fixer_in_mem {
 					if (addr != null && addr.type.equals("Var") && addr.num == 0) {
 						return false;
 					}
+					if (addr != null && addr.type.equals("Mem x8")){
+						return false;
+					}
 				}
 				{
 					simple_addr addr = instr.addr2;
 					if (addr != null && addr.type.equals("Var") && addr.num == 0) {
 						return false;
 					}
+					if (addr != null && addr.type.equals("Mem x8")){
+						return false;
+					}
 				}
 				{
 					simple_addr addr = instr.addr3;
 					if (addr != null && addr.type.equals("Var") && addr.num == 0) {
+						return false;
+					}
+					if (addr != null && addr.type.equals("Mem x8")){
 						return false;
 					}
 				}
@@ -58,6 +67,9 @@ public class IR_fixer_in_mem {
 						return false;
 					}
 					if (instr.name.equals("getInt")){
+						return false;
+					}
+					if (instr.name.equals("malloc x8")){
 						return false;
 					}
 				}

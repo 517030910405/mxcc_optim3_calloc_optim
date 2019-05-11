@@ -4795,6 +4795,7 @@ public class pro1 {
 		{
 			fix_together();
 		}
+		System.err.println(IR_fixer_in_mem.mem_loc_info);
 		//System.err.println("finished");
 
 	}
